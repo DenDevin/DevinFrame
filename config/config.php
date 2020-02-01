@@ -1,8 +1,8 @@
 <?php
 require_once(ROOT.DS.'lib'.DS.'config.class.php');
 
-Config::set('sitename', 'BeeJee Projects');
-Config::set('siteUrl', 'http://www.beejee.dendevin.xyz');
+Config::set('sitename', 'ABC Hosting');
+Config::set('siteUrl', 'http://dendev.zzz.com.ua');
 Config::set('languages', array('ru', 'en'));
 Config::set('routes', array(
     'default' => '',
@@ -15,7 +15,7 @@ Config::set('default_language', 'ru');
 Config::set('default_controller', 'tasks');
 Config::set('default_action', 'index');
 
-Config::set('db.host', 'dendev.mysql.tools');
-Config::set('db.user', 'dendev_beejee');
-Config::set('db.password', 'qazwsx8099');
-Config::set('db.name', 'dendev_beejee');
+Config::set('db.host', 'mysql.zzz.com.ua');
+Config::set('db.user', 'dendev');
+Config::set('db.password', 'Qazwsx@8099');
+Config::set('db.name', 'dendev');

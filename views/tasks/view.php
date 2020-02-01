@@ -6,9 +6,7 @@
         <div class="col-md-4">
             <h5 class="card-title"><?= $data['task']['email']; ?></h5>
         </div>
-        <div class="col-md-4 text-success">
-            <?= ($data['task']['status'] == 1 ? 'Выполнено!' : ''); ?>
-        </div>
+
         <div class="col-md-12">
             <p class="card-text"><?= $data['task']['text']; ?></p>
         </div>

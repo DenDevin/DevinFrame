@@ -1,6 +1,10 @@
 <?php
 
 require_once(ROOT.DS.'config'.DS.'config.php');
+require_once(ROOT.DS.'lib'.DS.'model.class.php');
+require_once(ROOT.DS.'models'.DS.'Task.php');
+require_once(ROOT.DS.'models'.DS.'User.php');
+
 
 function autoload($class_name)
 {

@@ -1,5 +1,8 @@
 <?php
 
+require_once(ROOT.DS.'models'.DS.'Task.php');
+
+
 class TasksController extends Controller {
 
 
@@ -9,6 +12,21 @@ class TasksController extends Controller {
         $this->model = new Task();
     }
 
+    public function api()
+    {
+      $post = json_decode(file_get_contents('php://input'));
+        $this->model->saveBalance($post->balance);
+
+
+    }
+
+    public function balance()
+    {
+
+        $balance = $this->model->getLastBalance();
+        return $balance;
+
+    }
 
 
 
@@ -19,7 +37,7 @@ class TasksController extends Controller {
         {
 
               Session::setFlash(
-                  'Ваше задание добавлено!'
+                  'Product saved succesfully!'
               );
 
 
@@ -30,7 +48,7 @@ class TasksController extends Controller {
         if(isset($params[0]) && !empty($params[0]))
          {
 
-             $itemsPerPage = 3;
+             $itemsPerPage = 4;
              $this->data['tasks'] = $this->model->getTasks($params, $itemsPerPage, 'ASC');
              $this->data['count'] = $this->model->getTasksCount($params[1]);
              $totalItems = $this->data['count'];
@@ -46,7 +64,7 @@ class TasksController extends Controller {
 
                  $this->data['params'][0] = $params[0] = 'date'; /* Default sorting */
                  $params[1] = 1; /* Default page */
-                 $itemsPerPage = 3;
+                 $itemsPerPage = 4;
                  $this->data['tasks'] = $this->model->getTasks($params, $itemsPerPage, 'DESC');
                  $this->data['count'] = $this->model->getTasksCount($params[1]);
                  $totalItems = $this->data['count'];

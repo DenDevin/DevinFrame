@@ -1,5 +1,6 @@
 <?php
 
+
 class Task extends Model
 {
     public function getList()
@@ -52,6 +53,42 @@ class Task extends Model
         return (isset($result[0]) ? $result[0] : null);
     }
 
+    public function getLastBalance()
+
+    {
+
+        $sql = 'select `name` from balance order by `id` DESC LIMIT 1';
+        return $this->db->query($sql);
+
+
+    }
+
+public function saveBalance($data)
+
+{
+
+    if  (!isset($data))
+
+    {
+        return false;
+    }
+
+    $balance = $this->db->escape($data);
+    $date = time();
+    $sql = "
+    insert into balance
+    set 
+    name = '{$balance}',
+    date = '{$date}'
+    ";
+
+
+
+
+    return $this->db->query($sql);
+
+
+}
 
     public function save($data, $id = null)
 {

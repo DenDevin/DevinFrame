@@ -11,24 +11,24 @@
 <form enctype="multipart/form-data" method="post" action="#">
 
         <div class="form-group">
-            <label for="name">Имя</label>
+            <label for="name">Name</label>
             <input value="<?= $data['task']['name']; ?>" name="name" type="text" class="form-control">
         </div>
 
         <div class="form-group">
-            <label for="email">E-mail</label>
-            <input value="<?= $data['task']['email']; ?>" name="email" type="email" class="form-control">
+            <label for="email">Price</label>
+            <input value="<?= $data['task']['email']; ?>" name="email" class="form-control">
         </div>
 
         <div class="form-group">
-            <label for="text">Текст задачи</label>
+            <label for="text">Product Description</label>
             <textarea name="text" class="form-control" rows="3"><?= $data['task']['text']; ?></textarea>
         </div>
 
     <div class="form-check">
         <input class="form-check-input" type="checkbox" name="status" <?= ($data['task']['status'] == 1 ? 'checked="checked"' : '') ?> id="status">
         <label class="form-check-label" for="status">
-         Выполнено
+         Active
         </label>
     </div>
     <div class="form-group my-2">

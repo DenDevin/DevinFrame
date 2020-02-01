@@ -21,16 +21,17 @@ class UsersController extends Controller
             $user = $this->model->getbyLogin($_POST['login']);
             $hash = md5($_POST['password']);
 
+
         if($user && $user['password'] == $hash)
         {
             Session::set('login', $user['login']);
             Session::set('role', $user['role']);
-            Router::redirect('/users/index/date/1');
+            Router::redirect('/tasks/index');
         }
 
         else
         {
-            Session::setFlash('Логин или пароль неверный');
+            Session::setFlash('Incorrect login or password!');
         }
 
 
@@ -90,7 +91,7 @@ class UsersController extends Controller
         {
 
             Session::setFlash(
-                'Задача обновлена!'
+                'Product was updated!'
             );
 
 

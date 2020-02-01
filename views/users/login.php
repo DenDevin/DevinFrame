@@ -15,15 +15,15 @@
 
 <form enctype="multipart/form-data" method="post" action="#">
     <div class="form-group">
-        <label for="name">Логин</label>
+        <label for="name">Login</label>
         <input v-model="name" name="login" type="text" class="form-control" id="name" placeholder="" required>
     </div>
 
     <div class="form-group">
-        <label for="email">Пароль</label>
+        <label for="email">Password</label>
         <input v-model="email" name="password" type="password" class="form-control" id="email" placeholder="" required>
     </div>
-    <button class="btn btn-success my-2 my-sm-0" type="submit">Войти</button>
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Sign in</button>
 </form>
 
 
